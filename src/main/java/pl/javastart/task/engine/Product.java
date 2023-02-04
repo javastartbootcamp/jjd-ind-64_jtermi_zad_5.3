@@ -4,10 +4,10 @@ public class Product {
 
     private String name;
     private String description;
-    private double price;
+    private float price;
     private String category;
 
-    public Product(String name, String description, double price, String category) {
+    public Product(String name, String description, float price, String category) {
         this.name = name;
         this.description = description;
         this.price = price;
@@ -30,11 +30,11 @@ public class Product {
         this.description = description;
     }
 
-    public double getPrice() {
+    public float getPrice() {
         return price;
     }
 
-    public void setPrice(double price) {
+    public void setPrice(float price) {
         this.price = price;
     }
 
@@ -46,11 +46,19 @@ public class Product {
         this.category = category;
     }
 
-    public void productInformation() {
-        System.out.printf("Nazwa produktu: %s\n", name);
-        System.out.printf("Opis Produktu: %s\n", description);
-        System.out.printf("Cena netto: %.2f PLN\n", price);
-        System.out.printf("Produkt należy do kategorii: %s \n", category);
+    public String getProductInformation() {
+        return ("\nNazwa produktu: " + name
+                + "\nOpis Produktu: " + description
+                + "\nCena netto: " + price + "PLN"
+                + "\nProdukt należy do kategorii: " + category);
+    }
+
+    public String getFinalPrice() {
+        Category category = new Category();
+        return ("Cena brutto produktu wynosi: "
+                + category.calculateFinalPrice(this)
+                + "PLN.\n");
+
     }
 
 }

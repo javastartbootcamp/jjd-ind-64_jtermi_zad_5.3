@@ -1,27 +1,23 @@
 package pl.javastart.task;
 
-import pl.javastart.task.engine.Category;
 import pl.javastart.task.engine.Product;
 
 public class Main {
 
     public static void main(String[] args) {
 
-        Product product1 = new Product("Mleko", "Prosto od krowy", 20, "Spożywcze");
-        Product product2 = new Product("Pasta", "Colgate", 5, "Środki do higieny");
-        Product product3 = new Product("Pieluchy", "Pampers", 15, "Dziecięce");
+        Product product1 = new Product("Mleko", "Prosto od krowy", 20F, "Spożywcze");
+        Product product2 = new Product("Pasta", "Colgate", 5F, "Środki do higieny");
+        Product product3 = new Product("Pieluchy", "Pampers", 15F, "Dziecięce");
 
-        Category category = new Category();
+        System.out.println(product1.getProductInformation());
+        System.out.printf(product1.getFinalPrice());
 
-        product1.productInformation();
-        System.out.printf("Cena brutto produktu wynosi: %.2f PLN\n\n", category.calculateFinalPrice(product1));
+        System.out.println(product2.getProductInformation());
+        System.out.println(product2.getFinalPrice());
 
-        product2.productInformation();
-        System.out.printf("Cena brutto produktu wynosi: %.2f PLN\n\n", category.calculateFinalPrice(product2));
-
-        product3.productInformation();
-        System.out.printf("Cena brutto produktu wynosi: %.2f PLN\n\n", category.calculateFinalPrice(product3));
+        System.out.println(product3.getProductInformation());
+        System.out.println(product3.getFinalPrice());
 
     }
-
 }

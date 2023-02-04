@@ -2,23 +2,24 @@ package pl.javastart.task.engine;
 
 public class Category {
 
-    public double calculateFinalPrice(Product product) {
-        double result;
+    public float calculateFinalPrice(Product product) {
+        return (product.getPrice() * (1 + getVatRate(product.getCategory())));
+    }
 
-        switch (product.getCategory()) {
+    public float getVatRate(String category) {
+        float vatRate;
+
+        switch (category) {
             case "Spożywcze", "Dziecięce":
-                result = product.getPrice() * 1.07;
-                System.out.println("Stawka VAT wynosi 7%");
+                vatRate =  0.07F;
                 break;
             case "Biurowe":
-                result = product.getPrice() * 1.14;
-                System.out.println("Stawka VAT wynosi 14%");
+                vatRate = 0.14F;
                 break;
             default:
-                result = product.getPrice() * 1.23;
-                System.out.println("Stawka VAT wynosi 23%");
+                vatRate = 0.23F;
         }
-        return result;
+        return vatRate;
     }
 
 }
