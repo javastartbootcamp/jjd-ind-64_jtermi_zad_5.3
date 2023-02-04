@@ -52,4 +52,5 @@ public class Product {
         System.out.printf("Cena netto: %.2f PLN\n", price);
         System.out.printf("Produkt należy do kategorii: %s \n", category);
     }
+
 }

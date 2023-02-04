@@ -23,4 +23,5 @@ public class Main {
         System.out.printf("Cena brutto produktu wynosi: %.2f PLN\n\n", category.calculateFinalPrice(product3));
 
     }
+
 }
